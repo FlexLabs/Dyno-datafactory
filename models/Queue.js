@@ -14,19 +14,10 @@ const queueItemSchema = new Schema({
 	v:             { type: Number },
 });
 
-/**
- * Server schema
- * @type {"mongoose".Schema}
- */
 const queueSchema = new Schema({
 	guild:    { type: String, index: true },
 	name:     { type: String },
 	queue:    [queueItemSchema],
-	creator:  { type: Object },
 });
 
-/**
- * Server model
- * @type {"mongoose".Model<serverSchema>}
- */
-module.exports = { name: 'Queue', schema: queueSchema }
+module.exports = mongoose.model('Queue', queueSchema);
