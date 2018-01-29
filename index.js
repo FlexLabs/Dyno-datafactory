@@ -19,24 +19,13 @@ class DataFactory {
 		mongoose.Promise = global.Promise;
 
 		mongoose.connect(options.dbString, {
-			server: {
-				poolSize: 5,
-				autoReconnect: true,
-				reconnectTries: Number.MAX_VALUE,
-				reconnectWait: 5000,
-				socketOptions: {
-					keepAlive: 120,
-					connectTimeoutMS: 30000,
-				},
-			},
-			replset: {
-				socketOptions: {
-						keepAlive: 1,
-						connectTimeoutMS : 30000 ,
-						socketTimeoutMS: 90000,
-				},
-				rs_name: 'dyno',
-			},
+			poolSize: 5,
+			autoReconnect: true,
+			reconnectTries: Number.MAX_VALUE,
+			reconnectInterval: 5000,
+			replicaSet: 'dyno',
+			keepAlive: 120,
+			connectTimeoutMS: 30000,
 			promiseLibrary: global.Promise,
 		});
 

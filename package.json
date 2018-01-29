@@ -1,6 +1,6 @@
 {
   "name": "@dyno.gg/datafactory",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "homepage": "https://github.com/FlexLabs/Dyno-datafactory",
   "author": {
     "name": "Brian Tanner",
@@ -19,7 +19,7 @@
     "dotenv": "^2.0.0",
     "getenv": "^0.6.0",
     "moment": "^2.17.0",
-    "mongoose": "^4.7.1",
+    "mongoose": "^5.0.2",
     "winston": "^2.2.0",
     "winston-sentry": "^0.1.4"
   },
