@@ -3,10 +3,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+require('mongoose-long')(mongoose);
+
 class ServerSchema {
 	constructor() {
 		this.schema = new Schema({
 			_id:      { type: String },
+			longId:	  { type: Schema.Types.Long, index: true },
 			prefix:   { type: String, default: '?' },
 			credits:  { type: Number, default: 0 },
 			modules:  { type: Object, default: {} },
