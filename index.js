@@ -43,11 +43,6 @@ class DataFactory {
 			});
 	}
 
-	registerModel({name, schema}) {
-		const model = mongoose.model(name, schema);
-		this._models[model.modelName] = model;
-	}
-
 	get models() {
 		return this._models;
 	}
@@ -56,8 +51,21 @@ class DataFactory {
 		return mongoose;
 	}
 
+	get connection() {
+		return mongoose.connection;
+	}
+
+	collection(...args) {
+		return mongoose.connection.collection(...args);
+	}
+
 	get Schema() {
 		return mongoose.Schema;
+	}
+
+	registerModel({name, schema}) {
+		const model = mongoose.model(name, schema);
+		this._models[model.modelName] = model;
 	}
 }
 
