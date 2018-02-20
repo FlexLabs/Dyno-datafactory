@@ -27,7 +27,7 @@ class DataFactory {
 			promiseLibrary: global.Promise,
 		};
 
-		if (!connectOpts.disableReplica) {
+		if (!options.disableReplica) {
 			connectOpts.replicaSet = 'dyno';
 		}
 
