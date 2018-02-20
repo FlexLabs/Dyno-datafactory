@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const getenv = require('getenv');
 const mongoose = require('mongoose');
 const Logger = require('./logger');
 
@@ -18,16 +17,21 @@ class DataFactory {
 
 		mongoose.Promise = global.Promise;
 
-		mongoose.connect(options.dbString, {
+		const connectOpts = {
 			poolSize: 5,
 			autoReconnect: true,
 			reconnectTries: Number.MAX_VALUE,
 			reconnectInterval: 5000,
-			replicaSet: 'dyno',
 			keepAlive: 120,
 			connectTimeoutMS: 30000,
 			promiseLibrary: global.Promise,
-		});
+		};
+
+		if (!connectOpts.disableReplica) {
+			connectOpts.replicaSet = 'dyno';
+		}
+
+		mongoose.connect(options.dbString, connectOpts);
 
 		const connection = mongoose.connection;
 

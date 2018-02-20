@@ -1,7 +1,6 @@
 'use strict';
 
 const util = require('util');
-const getenv = require('getenv');
 const moment = require('moment');
 const winston = require('winston');
 const Sentry = require('winston-sentry');
@@ -20,7 +19,7 @@ class Logger {
 		this.transports = [
 			new (winston.transports.Console)({
 				colorize: true,
-				level: options.logLevel || getenv('BOT_LOGLEVEL', 'info'),
+				level: options.logLevel || 'info',
 				debugStdout: true,
 				// handleExceptions: true,
 				// humanReadableUnhandledException: true,
