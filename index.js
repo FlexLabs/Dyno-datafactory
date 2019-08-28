@@ -25,6 +25,8 @@ class DataFactory {
 			keepAlive: 120,
 			connectTimeoutMS: 30000,
 			promiseLibrary: global.Promise,
+			useCreateIndex: true,
+			useNewUrlParser: true,
 		};
 
 		if (!options.disableReplica) {
