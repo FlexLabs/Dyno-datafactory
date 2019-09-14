@@ -8,7 +8,7 @@ const warningSchema = new Schema({
 	user:        { type: Object, required: true },
 	mod:         { type: Object, required: false },
 	reason:      { type: String },
-	createdAt:   { type: Date, default: Date.now, expires: '14d' },
+	createdAt:   { type: Date, default: Date.now },
 });
 
 module.exports = { name :'Warning', schema: warningSchema }
