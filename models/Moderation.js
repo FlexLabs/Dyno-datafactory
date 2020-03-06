@@ -13,6 +13,6 @@ const moderationSchema = new Schema({
 	type:        { type: String, required: true },
 	createdAt:   { type: Date, default: Date.now },
 	completedAt: { type: Date, index: true },
-});
+}, { strict: false });
 
 module.exports = { name: 'Moderation', schema: moderationSchema }
