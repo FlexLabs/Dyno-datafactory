@@ -8,7 +8,8 @@ const tagSchema = new Schema({
 	author:      { type: Object, required: true },
 	tag:         { type: String },
 	content:     { type: String },
+	usage: 		 { type: Number, default: 0 },
 	createdAt:   { type: Date, default: Date.now },
-});
+}, { strict: false });
 
 module.exports = { name: 'Tag', schema: tagSchema }

@@ -9,6 +9,6 @@ const warningSchema = new Schema({
 	mod:         { type: Object, required: false },
 	reason:      { type: String },
 	createdAt:   { type: Date, default: Date.now },
-});
+}, { strict: false });
 
 module.exports = { name :'Warning', schema: warningSchema }
