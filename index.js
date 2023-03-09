@@ -29,9 +29,9 @@ class DataFactory {
 			useNewUrlParser: true,
 		};
 
-		if (!options.disableReplica) {
-			connectOpts.replicaSet = 'dyno';
-		}
+		// if (!options.disableReplica) {
+		// 	connectOpts.replicaSet = 'dyno';
+		// }
 
 		mongoose.connect(options.dbString, connectOpts);
 
