@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commandLogSchema = new Schema({
-  server:      { type: String, required: true, index: true },
+  server:      { type: String, required: true },
   user:        { type: Object, required: true },
   command:     { type: String, required: true, index: true },
   message:     { type: String, required: true },
